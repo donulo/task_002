@@ -3,6 +3,7 @@
 int binomialCoefficient(int n, int k);
 
 int main() {
+    int result = 0;
     int n;
     if (scanf("%d", &n) == 1 && n > 0 && n <= 30) {
         n--;
@@ -11,8 +12,10 @@ int main() {
             printf("%d", binomialCoefficient(n, i));
         }
     } else {
-        printf("Puck you, Verter!");
+        fprintf(stderr, "Puck you, Verter!");
+        result = -1;
     }
+    return result;
 }
 int binomialCoefficient(int n, int k) {
     if (k == 0 || n == k) return 1;

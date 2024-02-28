@@ -4,8 +4,9 @@ int binomialCoefficient(int n, int k);
 void printMatrix(int n, int matrix[n][n]);
 
 int main() {
+    int result = 0;
     int size;
-    if (scanf("%d", &size) == 1 && size > 0 && size <= 30) {
+    if (scanf("%d", &size) == 1 && size > 0 && size <= 10) {
         int matrix[size][size];
         int count = 0;
         int n = 0;
@@ -17,8 +18,11 @@ int main() {
             n++;
         }
         printMatrix(size, matrix);
-    } else
-        printf("Puck you, Verter!");
+    } else {
+        fprintf(stderr, "Puck you, Verter!");
+        result = -1;
+    }
+    return result;
 }
 
 int binomialCoefficient(int n, int k) {
